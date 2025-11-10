@@ -25,7 +25,7 @@ async def websocket_analysis(websocket: WebSocket):
                 continue
 
             stockfish.set_fen_position(fen)
-            move = stockfish.get_best_move_time(1000)
+            move = stockfish.get_best_move_time(500)
             evaluation = stockfish.get_evaluation()
 
             await websocket.send_json({
